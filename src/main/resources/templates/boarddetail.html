@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/edit" method="post">
+		<table>
+			<thead>
+				<tr th:each="item : ${result}">
+					<td>
+					<input type="hidden" name="no" th:value="${item.no}" />
+					제목<input type="text" th:value="${item.title}" name="title">
+					내용<input type="text" th:value="${item.content}" name="content">
+					<button type="submit">수정</button>
+					</td>
+				</tr>
+			</thead>
+		</table>
+	</form>
+</body>
+</html>
